@@ -1,0 +1,20 @@
+{
+    "name": "UET Full Courses Name",
+    "description": "An extension to see the full name of courses on courses.uet.vnu.edu.vn by hunguet231.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [{
+        "matches": ["https://courses.uet.vnu.edu.vn/*"],
+        "css": ["css/my-styles.css"],
+        "js": ["js/content-script.js"]
+    }],
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab", "storage"]
+}
