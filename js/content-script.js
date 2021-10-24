@@ -26,12 +26,11 @@ for (i = 0; i < coursesList.length - 1; i++) {
 const course = getElementByXpath(
   "//html/body/div[3]/div/div[1]/div/div/nav/ul/li[3]/span/a"
 );
-
-course.getElementsByTagName("span")[0].textContent = course.getAttribute("title");
-
+if(course) {
+  course.getElementsByTagName("span")[0].textContent = course.getAttribute("title");
+}
 // navbar
-getElementByXpath("//html/body/div[3]/header[2]/nav/div/div/ul[1]/li[1]/ul")
-  .querySelectorAll("li a[title]")
+document.querySelectorAll("#wrapper > header.navbar .nav .dropdown:first-child li:not([class]) a[title]")
   .forEach(navLinkEle => {
     navLinkEle.textContent = navLinkEle.getAttribute("title");
   })
