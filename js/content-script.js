@@ -18,7 +18,7 @@ const coursesList = coursesListEle.getElementsByTagName("a");
 for (i = 0; i < coursesList.length - 1; i++) {
   const title = coursesList[i].getAttribute("title");
   if (title) {
-    coursesList[i].innerHTML = title;
+    coursesList[i].textContent = title;
   }
 }
 
@@ -26,5 +26,11 @@ for (i = 0; i < coursesList.length - 1; i++) {
 const course = getElementByXpath(
   "//html/body/div[3]/div/div[1]/div/div/nav/ul/li[3]/span/a"
 );
-
-course.getElementsByTagName("span")[0].innerHTML = course.getAttribute("title");
+if(course) {
+  course.getElementsByTagName("span")[0].textContent = course.getAttribute("title");
+}
+// navbar
+document.querySelectorAll("#wrapper > header.navbar .nav .dropdown:first-child li:not([class]) a[title]")
+  .forEach(navLinkEle => {
+    navLinkEle.textContent = navLinkEle.getAttribute("title");
+  })
