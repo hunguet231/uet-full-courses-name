@@ -18,7 +18,7 @@ const coursesList = coursesListEle.getElementsByTagName("a");
 for (i = 0; i < coursesList.length - 1; i++) {
   const title = coursesList[i].getAttribute("title");
   if (title) {
-    coursesList[i].innerHTML = title;
+    coursesList[i].textContent = title;
   }
 }
 
@@ -27,7 +27,7 @@ const course = getElementByXpath(
   "//html/body/div[3]/div/div[1]/div/div/nav/ul/li[3]/span/a"
 );
 
-course.getElementsByTagName("span")[0].innerHTML = course.getAttribute("title");
+course.getElementsByTagName("span")[0].textContent = course.getAttribute("title");
 
 // navbar
 getElementByXpath("//html/body/div[3]/header[2]/nav/div/div/ul[1]/li[1]/ul")
