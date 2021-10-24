@@ -28,3 +28,10 @@ const course = getElementByXpath(
 );
 
 course.getElementsByTagName("span")[0].innerHTML = course.getAttribute("title");
+
+// navbar
+getElementByXpath("//html/body/div[3]/header[2]/nav/div/div/ul[1]/li[1]/ul")
+  .querySelectorAll("li a[title]")
+  .forEach(navLinkEle => {
+    navLinkEle.textContent = navLinkEle.getAttribute("title");
+  })
